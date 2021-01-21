@@ -1,7 +1,7 @@
 {
-  "name": "vanilla",
+  "name": "bankist",
   "version": "1.0.0",
-  "description": "JavaScript example starter project",
+  "description": "Bank account UI.",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
@@ -12,8 +12,5 @@
     "@babel/core": "7.2.0",
     "parcel-bundler": "^1.6.1"
   },
-  "keywords": [
-    "javascript",
-    "starter"
-  ]
+  "keywords": []
 }
