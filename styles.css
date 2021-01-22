@@ -94,7 +94,7 @@ nav {
   gap: 2rem;
 
   /* NOTE This creates the fade in/out animation */
-  /* opacity: 0; */
+  opacity: 0;
   transition: all 1s;
 }
 
@@ -123,21 +123,21 @@ nav {
 }
 
 /* MOVEMENTS */
-.movements {
+.transactions {
   grid-row: 2 / span 3;
   background-color: #fff;
   border-radius: 1rem;
   overflow: scroll;
 }
 
-.movements__row {
+.transactions__row {
   padding: 2.25rem 4rem;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eee;
 }
 
-.movements__type {
+.transactions__type {
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 500;
@@ -147,22 +147,22 @@ nav {
   margin-right: 2rem;
 }
 
-.movements__date {
+.transactions__date {
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 500;
   color: #666;
 }
 
-.movements__type--deposit {
+.transactions__type--deposit {
   background-image: linear-gradient(to top left, #39b385, #9be15d);
 }
 
-.movements__type--withdrawal {
+.transactions__type--withdrawal {
   background-image: linear-gradient(to top left, #e52a5a, #ff585f);
 }
 
-.movements__value {
+.transactions__value {
   font-size: 1.7rem;
   margin-left: auto;
 }
