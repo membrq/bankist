@@ -80,16 +80,43 @@ btnLogin.addEventListener("click", function (e) {
 
   //validating credentials
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
-    //Display UI + welcome message
+    //display UI + welcome message
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(" ")[0]
     }`;
     containerApp.style.opacity = 100;
 
-    //Clear input fields
+    //clear input fields
     inputLoginUsername.value = "";
     inputLoginPin.value = "";
 
+    //update UI
     updateUI(currentAccount);
   }
 });
+
+//Displaying transactions
+const displayTransactions = function (transactions, sort = false) {
+  //setter
+  containerTransactions.innerHTML = "";
+
+  const trans = sort
+    ? transactions.slice().sort((a, b) => a - b)
+    : transactions;
+
+  trans.forEach(function (transaction, i) {
+    const type = transaction > 0 ? "deposit" : "withdrawal";
+
+    const html = `
+      <div class="transactions__row">
+        <div class="transactions__type transactions__type--${type}">${
+      i + 1
+    } ${type}</div>
+        <div class="transactions__date">3 days ago</div>
+        <div class="transactions__value">$${transaction}</div>
+      </div>
+    `;
+
+    containerTransactions.insertAdjacentHTML("afterbegin", html);
+  });
+};
