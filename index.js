@@ -151,3 +151,15 @@ const calcDisplaySummary = function (acc) {
 
   labelSumInterest.textContent = `$${interest}`;
 };
+
+//update UI with new inputs
+const updateUI = function (acc) {
+  //Display transactions
+  displayTransactions(acc.transactions);
+
+  //Display balance
+  calcDisplayBalance(acc);
+
+  //Display summary
+  calcDisplaySummary(acc);
+};
