@@ -164,7 +164,7 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
-//transfer button
+//event handler for transferring funds
 btnTransfer.addEventListener("click", function (e) {
   e.preventDefault();
   const amount = Number(inputTransferAmount.value);
@@ -185,5 +185,26 @@ btnTransfer.addEventListener("click", function (e) {
     receiverAcc.transactions.push(amount);
 
     updateUI(currentAccount);
+  }
+});
+
+//event handler for loaning funds
+btnLoan.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+  if (
+    amount > 0 &&
+    currentAccount.transactions.some((tran) => tran >= amount * 0.1)
+  ) {
+    //add transaction
+    currentAccount.transactions.push(amount);
+
+    //update UI
+    updateUI(currentAccount);
+
+    //clear inputs
+    inputLoanAmount.value = "";
   }
 });
