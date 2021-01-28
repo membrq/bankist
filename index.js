@@ -231,3 +231,11 @@ btnClose.addEventListener("click", function (e) {
     containerApp.style.opacity = 0;
   }
 });
+
+//event handler for sorting transactions
+let sorted = false;
+btnSort.addEventListener("click", function (e) {
+  e.preventDefault();
+  displayTransactions(currentAccount.transactions, !sorted);
+  sorted = !sorted;
+});
