@@ -208,3 +208,26 @@ btnLoan.addEventListener("click", function (e) {
     inputLoanAmount.value = "";
   }
 });
+
+//event handler for closing account
+btnClose.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (
+    currentAccount.username === inputCloseUsername.value &&
+    currentAccount.pin === Number(inputClosePin.value)
+  ) {
+    const accIndex = accounts.findIndex(
+      (acc) => acc.username === currentAccount.username
+    );
+
+    //clear inputs
+    inputCloseUsername.value = inputClosePin.value = "";
+
+    //delete account
+    accounts.splice(accIndex, 1);
+
+    //hide UI
+    containerApp.style.opacity = 0;
+  }
+});
